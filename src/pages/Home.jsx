@@ -81,7 +81,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto mt-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold">
-             Welcome, {user?.email || "User"}!
+  Welcome, {usersMap[user?.uid]?.firstName} {usersMap[user?.uid]?.lastName || ""}!
           </h1>
           <button
             onClick={handleLogout}
@@ -100,7 +100,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <h2 className="text-2xl font-semibold mb-4">📝 Posts</h2>
+        <h2 className="text-2xl font-semibold mb-4"> Posts</h2>
 
         <div className="space-y-4">
           {posts.length === 0 ? (
